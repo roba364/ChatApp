@@ -14,6 +14,11 @@
 		A4FD36A824752B3E00DC32B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FD36A724752B3E00DC32B8 /* Assets.xcassets */; };
 		A4FD36AB24752B3E00DC32B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FD36A924752B3E00DC32B8 /* LaunchScreen.storyboard */; };
 		A4FD36B924752C5100DC32B8 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36B824752C5100DC32B8 /* ConversationsController.swift */; };
+		A4FD36BC24753BF500DC32B8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36BB24753BF500DC32B8 /* LoginController.swift */; };
+		A4FD36BE24753C1000DC32B8 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36BD24753C1000DC32B8 /* RegisterController.swift */; };
+		A4FD36C024753FBA00DC32B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36BF24753FBA00DC32B8 /* Extensions.swift */; };
+		A4FD36C2247550B100DC32B8 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C1247550B100DC32B8 /* InputContainerView.swift */; };
+		A4FD36C42475548200DC32B8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C32475548200DC32B8 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		A4FD36AA24752B3E00DC32B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4FD36AC24752B3E00DC32B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4FD36B824752C5100DC32B8 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		A4FD36BB24753BF500DC32B8 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		A4FD36BD24753C1000DC32B8 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		A4FD36BF24753FBA00DC32B8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A4FD36C1247550B100DC32B8 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		A4FD36C32475548200DC32B8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,7 @@
 		A4FD36B224752BE800DC32B8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A4FD36BF24753FBA00DC32B8 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -92,6 +103,7 @@
 		A4FD36B424752BF000DC32B8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4FD36BA24753BC300DC32B8 /* Authentication */,
 				A4FD36B824752C5100DC32B8 /* ConversationsController.swift */,
 			);
 			path = Controllers;
@@ -107,6 +119,8 @@
 		A4FD36B624752BF600DC32B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A4FD36C1247550B100DC32B8 /* InputContainerView.swift */,
+				A4FD36C32475548200DC32B8 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +130,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A4FD36BA24753BC300DC32B8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A4FD36BB24753BF500DC32B8 /* LoginController.swift */,
+				A4FD36BD24753C1000DC32B8 /* RegisterController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,9 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4FD36A324752B3C00DC32B8 /* ViewController.swift in Sources */,
+				A4FD36C2247550B100DC32B8 /* InputContainerView.swift in Sources */,
 				A4FD369F24752B3C00DC32B8 /* AppDelegate.swift in Sources */,
+				A4FD36BE24753C1000DC32B8 /* RegisterController.swift in Sources */,
 				A4FD36B924752C5100DC32B8 /* ConversationsController.swift in Sources */,
 				A4FD36A124752B3C00DC32B8 /* SceneDelegate.swift in Sources */,
+				A4FD36BC24753BF500DC32B8 /* LoginController.swift in Sources */,
+				A4FD36C024753FBA00DC32B8 /* Extensions.swift in Sources */,
+				A4FD36C42475548200DC32B8 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
