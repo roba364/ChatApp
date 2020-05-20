@@ -1,5 +1,5 @@
 //
-//  LoginViewModel.swift
+//  RegisterViewModel.swift
 //  ChatApp
 //
 //  Created by SofiaBuslavskaya on 20/05/2020.
@@ -8,12 +8,20 @@
 
 import Foundation
 
-struct LoginViewModel {
+struct RegisterViewModel: AuthenticationProtocol {
+
+    
     var email: String?
+    var fullName: String?
+    var userName: String?
     var password: String?
     
     var formIsValid: Bool {
         return email?.isEmpty == false
-            && password?.isEmpty == false
+            && fullName?.isEmpty == false
+            && userName?.isEmpty == false
+            && password?.isEmpty == false 
     }
+    
+    
 }

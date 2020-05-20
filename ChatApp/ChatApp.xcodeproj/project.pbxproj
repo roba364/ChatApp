@@ -20,6 +20,7 @@
 		A4FD36C2247550B100DC32B8 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C1247550B100DC32B8 /* InputContainerView.swift */; };
 		A4FD36C42475548200DC32B8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C32475548200DC32B8 /* CustomTextField.swift */; };
 		A4FD36C6247571DF00DC32B8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C5247571DF00DC32B8 /* LoginViewModel.swift */; };
+		A4FD36C8247583BE00DC32B8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C7247583BE00DC32B8 /* RegisterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A4FD36C1247550B100DC32B8 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		A4FD36C32475548200DC32B8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A4FD36C5247571DF00DC32B8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A4FD36C7247583BE00DC32B8 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,7 @@
 		A4FD36B524752BF400DC32B8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A4FD36C5247571DF00DC32B8 /* LoginViewModel.swift */,
+				A4FD36C9247583D100DC32B8 /* Authentication */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -140,6 +142,15 @@
 			children = (
 				A4FD36BB24753BF500DC32B8 /* LoginController.swift */,
 				A4FD36BD24753C1000DC32B8 /* RegisterController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A4FD36C9247583D100DC32B8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A4FD36C5247571DF00DC32B8 /* LoginViewModel.swift */,
+				A4FD36C7247583BE00DC32B8 /* RegisterViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -219,6 +230,7 @@
 				A4FD36C2247550B100DC32B8 /* InputContainerView.swift in Sources */,
 				A4FD369F24752B3C00DC32B8 /* AppDelegate.swift in Sources */,
 				A4FD36BE24753C1000DC32B8 /* RegisterController.swift in Sources */,
+				A4FD36C8247583BE00DC32B8 /* RegisterViewModel.swift in Sources */,
 				A4FD36B924752C5100DC32B8 /* ConversationsController.swift in Sources */,
 				A4FD36A124752B3C00DC32B8 /* SceneDelegate.swift in Sources */,
 				A4FD36BC24753BF500DC32B8 /* LoginController.swift in Sources */,

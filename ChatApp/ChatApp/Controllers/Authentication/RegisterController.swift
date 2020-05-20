@@ -12,6 +12,8 @@ class RegisterController: UIViewController {
     
     //MARK: - Properties
     
+    private var viewModel = RegisterViewModel()
+    
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         let image = UIImage(named: "plus_photo")
@@ -66,6 +68,7 @@ class RegisterController: UIViewController {
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.setHeight(height: 50)
+        button.isEnabled = false
         return button
     }()
     
@@ -94,13 +97,29 @@ class RegisterController: UIViewController {
         super.viewDidLoad()
 
         configureUI()
-        
+        configureNotificationObservers()
     }
     
     //MARK: - Selectors
     
-    @objc func handleSelectPhoto() {
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else if sender == fullNameTextField {
+            viewModel.fullName = sender.text
+        } else if sender == userNameTextField {
+            viewModel.userName = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
         
+        checkFormStatus()
+    }
+    
+    @objc func handleSelectPhoto() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true)
     }
     
     @objc func handleDismiss() {
@@ -141,4 +160,41 @@ class RegisterController: UIViewController {
                                        paddingBottom: 35,
                                        paddingRight: 32)
     }
+    
+    private func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange(sender:)), for: .editingChanged)
+        fullNameTextField.addTarget(self, action: #selector(textDidChange(sender:)), for: .editingChanged)
+        userNameTextField.addTarget(self, action: #selector(textDidChange(sender:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange(sender:)), for: .editingChanged)
+    }
+}
+
+//MARK: - UIImagePickerControllerDelegate
+
+extension RegisterController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image = info[.originalImage] as? UIImage
+        plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        plusPhotoButton.layer.borderColor = UIColor.white.cgColor
+        plusPhotoButton.layer.borderWidth = 3.0
+        plusPhotoButton.layer.masksToBounds = true
+        plusPhotoButton.contentMode = .scaleAspectFill
+        plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width / 2
+        
+        dismiss(animated: true)
+    }
+}
+
+extension RegisterController: AuthenticationControllerProtocol {
+
+        func checkFormStatus() {
+            if viewModel.formIsValid {
+                signUpButton.isEnabled = true
+                signUpButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            } else {
+                signUpButton.isEnabled = false
+                signUpButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+            }
+        }
 }
