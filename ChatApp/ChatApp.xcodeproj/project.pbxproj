@@ -19,6 +19,7 @@
 		A4FD36C024753FBA00DC32B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36BF24753FBA00DC32B8 /* Extensions.swift */; };
 		A4FD36C2247550B100DC32B8 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C1247550B100DC32B8 /* InputContainerView.swift */; };
 		A4FD36C42475548200DC32B8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C32475548200DC32B8 /* CustomTextField.swift */; };
+		A4FD36C6247571DF00DC32B8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C5247571DF00DC32B8 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A4FD36BF24753FBA00DC32B8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A4FD36C1247550B100DC32B8 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		A4FD36C32475548200DC32B8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A4FD36C5247571DF00DC32B8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		A4FD36B524752BF400DC32B8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A4FD36C5247571DF00DC32B8 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				A4FD36A124752B3C00DC32B8 /* SceneDelegate.swift in Sources */,
 				A4FD36BC24753BF500DC32B8 /* LoginController.swift in Sources */,
 				A4FD36C024753FBA00DC32B8 /* Extensions.swift in Sources */,
+				A4FD36C6247571DF00DC32B8 /* LoginViewModel.swift in Sources */,
 				A4FD36C42475548200DC32B8 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
