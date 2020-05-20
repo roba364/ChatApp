@@ -1,0 +1,2 @@
+# ChatApp
+stack: MVVM, Firestore
