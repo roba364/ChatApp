@@ -119,11 +119,5 @@ class LoginController: UIViewController {
                                        paddingRight: 32)
     }
     
-    private func configureGradientLayer() {
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
-    }
+    
 }
