@@ -28,6 +28,7 @@
 		A4FD36D324769D4900DC32B8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36D224769D4900DC32B8 /* User.swift */; };
 		A4FD36D524769DCD00DC32B8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36D424769DCD00DC32B8 /* Service.swift */; };
 		A4FD36D72476AF7700DC32B8 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36D62476AF7700DC32B8 /* ChatController.swift */; };
+		A4FD36D92476B64600DC32B8 /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36D82476B64600DC32B8 /* CustomInputAccessoryView.swift */; };
 		EEAA0CB97DDC401DDCB70A46 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		A4FD36D224769D4900DC32B8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A4FD36D424769DCD00DC32B8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		A4FD36D62476AF7700DC32B8 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		A4FD36D82476B64600DC32B8 /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 		F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 				A4FD36C1247550B100DC32B8 /* InputContainerView.swift */,
 				A4FD36C32475548200DC32B8 /* CustomTextField.swift */,
 				A4FD36D0247698B300DC32B8 /* UserCell.swift */,
+				A4FD36D82476B64600DC32B8 /* CustomInputAccessoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				A4FD36D72476AF7700DC32B8 /* ChatController.swift in Sources */,
 				A4FD36C42475548200DC32B8 /* CustomTextField.swift in Sources */,
 				A4FD36CF24768F2200DC32B8 /* NewMessageController.swift in Sources */,
+				A4FD36D92476B64600DC32B8 /* CustomInputAccessoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

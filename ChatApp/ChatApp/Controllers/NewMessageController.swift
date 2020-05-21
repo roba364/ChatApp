@@ -47,7 +47,6 @@ class NewMessageController: UITableViewController {
     //MARK: - Helpers
     
     private func configureUI() {
-        view.backgroundColor = .green
         
         configureNavigationBar(withTitle: "New message", prefersLargeTitles: false)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleDismiss))
