@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		A4FD36C6247571DF00DC32B8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C5247571DF00DC32B8 /* LoginViewModel.swift */; };
 		A4FD36C8247583BE00DC32B8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C7247583BE00DC32B8 /* RegisterViewModel.swift */; };
 		A4FD36CB24765BBE00DC32B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4FD36CA24765BBE00DC32B8 /* GoogleService-Info.plist */; };
+		A4FD36CD247673CA00DC32B8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36CC247673CA00DC32B8 /* AuthService.swift */; };
 		EEAA0CB97DDC401DDCB70A46 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		A4FD36C5247571DF00DC32B8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A4FD36C7247583BE00DC32B8 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A4FD36CA24765BBE00DC32B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A4FD36CC247673CA00DC32B8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -66,7 +68,6 @@
 				39CAB91C0CED790C3226859E /* Pods-ChatApp.debug.xcconfig */,
 				9995F37778A8CE3710D9BC0D /* Pods-ChatApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -120,6 +121,7 @@
 		A4FD36B324752BEB00DC32B8 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A4FD36CC247673CA00DC32B8 /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -302,6 +304,7 @@
 				A4FD36A324752B3C00DC32B8 /* ViewController.swift in Sources */,
 				A4FD36C2247550B100DC32B8 /* InputContainerView.swift in Sources */,
 				A4FD369F24752B3C00DC32B8 /* AppDelegate.swift in Sources */,
+				A4FD36CD247673CA00DC32B8 /* AuthService.swift in Sources */,
 				A4FD36BE24753C1000DC32B8 /* RegisterController.swift in Sources */,
 				A4FD36C8247583BE00DC32B8 /* RegisterViewModel.swift in Sources */,
 				A4FD36B924752C5100DC32B8 /* ConversationsController.swift in Sources */,
