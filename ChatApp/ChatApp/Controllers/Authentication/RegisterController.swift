@@ -121,12 +121,16 @@ class RegisterController: UIViewController {
                                                  fullname: fullname,
                                                  username: username,
                                                  profileImage: profileImage)
+        
+        showLoader(true, withText: "Registering...")
             
         AuthService.shared.createUser(credentials: credentials) { (error) in
             if let error = error {
                 print("DEBUG: Failed to create user with error", error.localizedDescription)
+                self.showLoader(false)
             }
             
+            self.showLoader(false)
             self.dismiss(animated: true)
         }
     }
@@ -153,6 +157,18 @@ class RegisterController: UIViewController {
     
     @objc func handleDismiss() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func keyboardWillShow() {
+        if view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= 88
+        }
+    }
+    
+    @objc func keyboardWillHide() {
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 0
+        }
     }
     
     //MARK: - Helpers
@@ -195,6 +211,9 @@ class RegisterController: UIViewController {
         fullNameTextField.addTarget(self, action: #selector(textDidChange(sender:)), for: .editingChanged)
         userNameTextField.addTarget(self, action: #selector(textDidChange(sender:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange(sender:)), for: .editingChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 
