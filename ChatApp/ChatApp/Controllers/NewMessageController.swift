@@ -14,17 +14,29 @@ class NewMessageController: UITableViewController {
     
     //MARK: Properties
     
+    private var users = [User]()
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchUsers()
     }
     
     //MARK: - Selectors
     
     @objc func handleDismiss() {
         dismiss(animated: true)
+    }
+    
+    //MARK: - API
+    
+    private func fetchUsers() {
+        Service.fetchUsers { [weak self] (users) in
+            self?.users = users
+            self?.tableView.reloadData()
+        }
     }
     
     //MARK: - Helpers
@@ -47,13 +59,16 @@ extension NewMessageController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 2
+        return users.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! UserCell
         
+        let user = users[indexPath.row]
+        
+        cell.user = user
         
         return cell
     }
