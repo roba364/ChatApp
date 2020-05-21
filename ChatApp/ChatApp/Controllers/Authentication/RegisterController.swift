@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterController: UIViewController {
     
     //MARK: - Properties
     
     private var viewModel = RegisterViewModel()
+    private var profileImage: UIImage?
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         let image = UIImage(named: "plus_photo")
         button.setImage(image, for: .normal)
         button.tintColor = .white
+        button.imageView?.contentMode = .scaleAspectFill
         button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         return button
     }()
@@ -61,7 +64,7 @@ class RegisterController: UIViewController {
     }()
     
     private let signUpButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         button.setTitle("Sign Up", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -69,6 +72,7 @@ class RegisterController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.setHeight(height: 50)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
     
@@ -101,6 +105,61 @@ class RegisterController: UIViewController {
     }
     
     //MARK: - Selectors
+    
+    @objc func handleRegistration() {
+        guard
+            let email = emailTextField.text,
+            let fullname = fullNameTextField.text,
+            let username = userNameTextField.text?.lowercased(),
+            let password = passwordTextField.text,
+            let profileImage = profileImage,
+            let imageData = profileImage.jpegData(compressionQuality: 0.3)
+            else { return }
+            
+        // get unique identifier for each photo
+        let filename = UUID().uuidString
+        let storageRef = Storage.storage().reference(withPath: "/profile_images/\(filename)")
+        
+        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            if let error = error {
+                print("DEBUG: Failed to upload image with error", error.localizedDescription)
+                return
+            }
+            
+            storageRef.downloadURL { (url, error) in
+                guard let profileImageUrl = url?.absoluteString else { return }
+                
+                // Create user
+                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                    if let error = error {
+                        print("DEBUG: Failed to create user with error", error.localizedDescription)
+                        return
+                    }
+                    
+                    // get user id
+                    guard let uid = result?.user.uid else { return }
+                    
+                    let data = ["email": email,
+                                "fullname": fullname,
+                                "profileImageUrl": profileImageUrl,
+                                "uid": uid,
+                                "username": username] as [String: Any]
+                    
+                    Firestore.firestore().collection("users").document(uid).setData(data) { (error) in
+                        if let error = error {
+                            print("DEBUG: Failed to upload user with data, error: ", error.localizedDescription)
+                            return
+                        }
+                        
+                        
+                        print("DEBUG: Did create user")
+                    }
+                }
+            }
+            
+        }
+        
+    }
     
     @objc func textDidChange(sender: UITextField) {
         if sender == emailTextField {
@@ -175,6 +234,7 @@ extension RegisterController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let image = info[.originalImage] as? UIImage
+        profileImage = image
         plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
         plusPhotoButton.layer.borderColor = UIColor.white.cgColor
         plusPhotoButton.layer.borderWidth = 3.0

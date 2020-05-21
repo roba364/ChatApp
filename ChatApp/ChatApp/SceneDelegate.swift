@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let conversationsController = ConversationsController()
+//        let conversationsController = ConversationsController()
         let loginController = LoginController()
         let navController = UINavigationController(rootViewController: loginController)
         window?.rootViewController = navController
