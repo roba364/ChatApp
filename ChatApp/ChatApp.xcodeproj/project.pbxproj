@@ -24,6 +24,7 @@
 		A4FD36CB24765BBE00DC32B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4FD36CA24765BBE00DC32B8 /* GoogleService-Info.plist */; };
 		A4FD36CD247673CA00DC32B8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36CC247673CA00DC32B8 /* AuthService.swift */; };
 		A4FD36CF24768F2200DC32B8 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36CE24768F2200DC32B8 /* NewMessageController.swift */; };
+		A4FD36D1247698B300DC32B8 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36D0247698B300DC32B8 /* UserCell.swift */; };
 		EEAA0CB97DDC401DDCB70A46 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		A4FD36CA24765BBE00DC32B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4FD36CC247673CA00DC32B8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A4FD36CE24768F2200DC32B8 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		A4FD36D0247698B300DC32B8 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 			children = (
 				A4FD36C1247550B100DC32B8 /* InputContainerView.swift */,
 				A4FD36C32475548200DC32B8 /* CustomTextField.swift */,
+				A4FD36D0247698B300DC32B8 /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				A4FD36CD247673CA00DC32B8 /* AuthService.swift in Sources */,
 				A4FD36BE24753C1000DC32B8 /* RegisterController.swift in Sources */,
 				A4FD36C8247583BE00DC32B8 /* RegisterViewModel.swift in Sources */,
+				A4FD36D1247698B300DC32B8 /* UserCell.swift in Sources */,
 				A4FD36B924752C5100DC32B8 /* ConversationsController.swift in Sources */,
 				A4FD36A124752B3C00DC32B8 /* SceneDelegate.swift in Sources */,
 				A4FD36BC24753BF500DC32B8 /* LoginController.swift in Sources */,
