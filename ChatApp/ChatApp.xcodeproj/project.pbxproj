@@ -23,6 +23,7 @@
 		A4FD36C8247583BE00DC32B8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36C7247583BE00DC32B8 /* RegisterViewModel.swift */; };
 		A4FD36CB24765BBE00DC32B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4FD36CA24765BBE00DC32B8 /* GoogleService-Info.plist */; };
 		A4FD36CD247673CA00DC32B8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36CC247673CA00DC32B8 /* AuthService.swift */; };
+		A4FD36CF24768F2200DC32B8 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36CE24768F2200DC32B8 /* NewMessageController.swift */; };
 		EEAA0CB97DDC401DDCB70A46 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		A4FD36C7247583BE00DC32B8 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A4FD36CA24765BBE00DC32B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4FD36CC247673CA00DC32B8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A4FD36CE24768F2200DC32B8 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 			children = (
 				A4FD36BA24753BC300DC32B8 /* Authentication */,
 				A4FD36B824752C5100DC32B8 /* ConversationsController.swift */,
+				A4FD36CE24768F2200DC32B8 /* NewMessageController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				A4FD36C024753FBA00DC32B8 /* Extensions.swift in Sources */,
 				A4FD36C6247571DF00DC32B8 /* LoginViewModel.swift in Sources */,
 				A4FD36C42475548200DC32B8 /* CustomTextField.swift in Sources */,
+				A4FD36CF24768F2200DC32B8 /* NewMessageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
