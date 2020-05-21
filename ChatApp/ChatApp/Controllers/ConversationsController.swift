@@ -43,6 +43,7 @@ class ConversationsController: UIViewController {
     
     @objc func showNewMessage() {
         let newMessageController = NewMessageController()
+        newMessageController.delegate = self
         let navController = UINavigationController(rootViewController: newMessageController)
         navController.modalPresentationStyle = .fullScreen
         present(navController, animated: true)
@@ -55,7 +56,7 @@ class ConversationsController: UIViewController {
             presentLoginScreen()
             print("DEBUG: User is not logged in")
         } else {
-            print("DEBUG: User id is : \(Auth.auth().currentUser?.uid)")
+            print("DEBUG: User logged in. User is : \(Auth.auth().currentUser?.uid)")
         }
     }
     
@@ -117,12 +118,16 @@ class ConversationsController: UIViewController {
     }
 }
 
+    //MARK: - UITableViewDelegate
+
 extension ConversationsController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
     }
 }
+
+    //MARK: - UITableViewDataSource
 
 extension ConversationsController: UITableViewDataSource {
     
@@ -139,5 +144,19 @@ extension ConversationsController: UITableViewDataSource {
         
         return cell
     }
+    
+}
+
+    //MARK: - NewMessageControllerDelegate
+
+extension ConversationsController: NewMessageControllerDelegate {
+    
+    func controller(_ controller: NewMessageController, wantsToStartChatWith user: User) {
+        controller.dismiss(animated: true)
+        
+        let chat = ChatController(user: user)
+        navigationController?.pushViewController(chat, animated: true)
+    }
+    
     
 }
