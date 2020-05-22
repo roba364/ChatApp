@@ -92,7 +92,7 @@ struct Service {
                                             completion: completion)
             
             // create new collection of recent-messages
-            // upload recent message data to user who send message, and who get message
+            // upload recent message data for show at ConversationController to user who send message, and who get message
             COLLECTION_MESSAGES.document(currentUID)
                                .collection("recent-messages")
                                .document(user.uid)

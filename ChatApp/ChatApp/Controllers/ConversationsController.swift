@@ -37,6 +37,12 @@ class ConversationsController: UIViewController {
         fetchConversations()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
+    }
+    
     //MARK: - Selectors
     
     @objc func showProfile() {
@@ -91,8 +97,7 @@ class ConversationsController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
-        
-        configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
+    
         configureTableView()
         
         
@@ -116,7 +121,7 @@ class ConversationsController: UIViewController {
     private func configureTableView() {
         tableView.backgroundColor = .white
         tableView.rowHeight = 80
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(ConversationCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
@@ -125,6 +130,11 @@ class ConversationsController: UIViewController {
         
         tableView.frame = view.frame
     }
+    
+    private func showChatController(forUser user: User) {
+        let chatController = ChatController(user: user)
+        navigationController?.pushViewController(chatController, animated: true)
+    }
 }
 
     //MARK: - UITableViewDelegate
@@ -132,7 +142,9 @@ class ConversationsController: UIViewController {
 extension ConversationsController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let user = conversations[indexPath.row].user
+        showChatController(forUser: user)
+        
     }
 }
 
@@ -147,11 +159,11 @@ extension ConversationsController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ConversationCell else { fatalError("Failed to register reusable ConversationCell")}
         
         let conversation = conversations[indexPath.row]
-        
-        cell.textLabel?.text = conversation.message.text
+    
+        cell.conversation = conversation
         
         return cell
     }

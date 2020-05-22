@@ -33,6 +33,8 @@
 		A4FD36DD2476C84000DC32B8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36DC2476C84000DC32B8 /* Message.swift */; };
 		A4FD36DF2476CDAD00DC32B8 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36DE2476CDAD00DC32B8 /* MessageViewModel.swift */; };
 		A4FD36E12477C2CE00DC32B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36E02477C2CE00DC32B8 /* Constants.swift */; };
+		A4FD36E32477E84700DC32B8 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36E22477E84600DC32B8 /* ConversationCell.swift */; };
+		A4FD36E52477EC3200DC32B8 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36E42477EC3200DC32B8 /* ConversationViewModel.swift */; };
 		EEAA0CB97DDC401DDCB70A46 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		A4FD36DC2476C84000DC32B8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A4FD36DE2476CDAD00DC32B8 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		A4FD36E02477C2CE00DC32B8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A4FD36E22477E84600DC32B8 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		A4FD36E42477EC3200DC32B8 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,6 +168,7 @@
 			children = (
 				A4FD36C9247583D100DC32B8 /* Authentication */,
 				A4FD36DE2476CDAD00DC32B8 /* MessageViewModel.swift */,
+				A4FD36E42477EC3200DC32B8 /* ConversationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				A4FD36C32475548200DC32B8 /* CustomTextField.swift */,
 				A4FD36D0247698B300DC32B8 /* UserCell.swift */,
 				A4FD36D82476B64600DC32B8 /* CustomInputAccessoryView.swift */,
+				A4FD36E22477E84600DC32B8 /* ConversationCell.swift */,
 				A4FD36DA2476C11800DC32B8 /* MessageCell.swift */,
 			);
 			path = View;
@@ -344,12 +350,14 @@
 				A4FD36D324769D4900DC32B8 /* User.swift in Sources */,
 				A4FD36D524769DCD00DC32B8 /* Service.swift in Sources */,
 				A4FD36DB2476C11800DC32B8 /* MessageCell.swift in Sources */,
+				A4FD36E52477EC3200DC32B8 /* ConversationViewModel.swift in Sources */,
 				A4FD36A124752B3C00DC32B8 /* SceneDelegate.swift in Sources */,
 				A4FD36BC24753BF500DC32B8 /* LoginController.swift in Sources */,
 				A4FD36C024753FBA00DC32B8 /* Extensions.swift in Sources */,
 				A4FD36C6247571DF00DC32B8 /* LoginViewModel.swift in Sources */,
 				A4FD36D72476AF7700DC32B8 /* ChatController.swift in Sources */,
 				A4FD36C42475548200DC32B8 /* CustomTextField.swift in Sources */,
+				A4FD36E32477E84700DC32B8 /* ConversationCell.swift in Sources */,
 				A4FD36DD2476C84000DC32B8 /* Message.swift in Sources */,
 				A4FD36CF24768F2200DC32B8 /* NewMessageController.swift in Sources */,
 				A4FD36D92476B64600DC32B8 /* CustomInputAccessoryView.swift in Sources */,
