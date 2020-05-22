@@ -39,6 +39,7 @@
 		A4FD36E92477F24800DC32B8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36E82477F24800DC32B8 /* ProfileHeaderView.swift */; };
 		A4FD36EB24781F8500DC32B8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36EA24781F8500DC32B8 /* ProfileViewModel.swift */; };
 		A4FD36ED247821CD00DC32B8 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36EC247821CD00DC32B8 /* ProfileCell.swift */; };
+		A4FD36EF247827F400DC32B8 /* ProfileFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36EE247827F400DC32B8 /* ProfileFooterView.swift */; };
 		EEAA0CB97DDC401DDCB70A46 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		A4FD36E82477F24800DC32B8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		A4FD36EA24781F8500DC32B8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A4FD36EC247821CD00DC32B8 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		A4FD36EE247827F400DC32B8 /* ProfileFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooterView.swift; sourceTree = "<group>"; };
 		F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -194,6 +196,7 @@
 				A4FD36DA2476C11800DC32B8 /* MessageCell.swift */,
 				A4FD36EC247821CD00DC32B8 /* ProfileCell.swift */,
 				A4FD36E82477F24800DC32B8 /* ProfileHeaderView.swift */,
+				A4FD36EE247827F400DC32B8 /* ProfileFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				A4FD36C2247550B100DC32B8 /* InputContainerView.swift in Sources */,
 				A4FD369F24752B3C00DC32B8 /* AppDelegate.swift in Sources */,
 				A4FD36CD247673CA00DC32B8 /* AuthService.swift in Sources */,
+				A4FD36EF247827F400DC32B8 /* ProfileFooterView.swift in Sources */,
 				A4FD36DF2476CDAD00DC32B8 /* MessageViewModel.swift in Sources */,
 				A4FD36BE24753C1000DC32B8 /* RegisterController.swift in Sources */,
 				A4FD36C8247583BE00DC32B8 /* RegisterViewModel.swift in Sources */,

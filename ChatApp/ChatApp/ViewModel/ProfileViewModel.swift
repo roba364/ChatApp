@@ -9,6 +9,7 @@
 import Foundation
 
 enum ProfileViewModel: Int, CaseIterable {
+    // here we can realize static content, which we can add in one place
     case accountInfo
     case settings
     
