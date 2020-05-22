@@ -48,6 +48,8 @@ class ConversationsController: UIViewController {
     @objc func showProfile() {
         
         let profileController = ProfileController(style: .insetGrouped)
+        // use delegate chaining
+        profileController.delegate = self
         let nav = UINavigationController(rootViewController: profileController)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
@@ -183,6 +185,14 @@ extension ConversationsController: NewMessageControllerDelegate {
         
         let chat = ChatController(user: user)
         navigationController?.pushViewController(chat, animated: true)
+    }
+}
+
+extension ConversationsController: ProfileControllerDelegate {
+    // use delegate chaining
+    // end of chaining
+    func handleLogout() {
+        logout()
     }
     
     

@@ -11,6 +11,11 @@ import Firebase
 
 private let reuseIdentifier = "ProfileCell"
 
+// use delegate chaining
+protocol ProfileControllerDelegate: class {
+    func handleLogout()
+}
+
 class ProfileController: UITableViewController {
     
     //MARK: - Properties
@@ -18,6 +23,9 @@ class ProfileController: UITableViewController {
     private var user: User? {
         didSet { headerView.user = user }
     }
+    
+    // use delegate chaining
+    weak var delegate: ProfileControllerDelegate?
     
     private lazy var headerView = ProfileHeaderView(frame: .init(x: 0, y: 0,
                                                                  width: view.frame.width,
@@ -61,8 +69,11 @@ class ProfileController: UITableViewController {
         tableView.rowHeight = 64
         tableView.backgroundColor = .systemGroupedBackground
         
+        // use delegate chaining
+        footerView.delegate = self
         footerView.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
         tableView.tableFooterView = footerView
+        
     }
 }
 
@@ -85,8 +96,22 @@ extension ProfileController {
         return cell
     }
 }
+    //MARK: - UITableViewDelegate
 
 extension ProfileController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = ProfileViewModel(rawValue: indexPath.row) else { return }
+        
+        switch viewModel {
+        case .accountInfo:
+            print("DEBUG: Show account info controller")
+        case .settings:
+            print("DEBUG: Show settings controller")
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // add some padding on top
         return UIView()
@@ -100,5 +125,26 @@ extension ProfileController: ProfileHeaderViewDelegate {
     
     func dismissController() {
         dismiss(animated: true)
+    }
+}
+
+    //MARK: - ProfileFooterViewDelegate
+
+extension ProfileController: ProfileFooterViewDelegate {
+    // use delegate chaining
+    func handleLogout() {
+        let alertController = UIAlertController(title: nil, message: "Are you sure you want to logout?", preferredStyle: .actionSheet)
+        
+        let actionLogout = UIAlertAction(title: "Log out", style: .destructive) { (_) in
+            self.delegate?.handleLogout()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(actionLogout)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true)
+        
     }
 }
