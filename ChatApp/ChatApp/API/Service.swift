@@ -26,6 +26,27 @@ struct Service {
         }
     }
     
+    static func fetchMessages(forUser user: User, completion: @escaping ([Message]) -> Void) {
+        var messages = [Message]()
+        
+        guard let currentUID = Auth.auth().currentUser?.uid else { return }
+        
+        // fetch all recent messages
+        let query = COLLECTION_MESSAGES.document(currentUID).collection(user.uid).order(by: "timeStamp")
+        
+        // snapshot listener reports about new changes in database
+        query.addSnapshotListener { (snapshot, error) in
+            snapshot?.documentChanges.forEach({ change in
+                // when we add something in database
+                if change.type == .added {
+                    let dictionary = change.document.data()
+                    messages.append(Message(dictionary: dictionary))
+                    completion(messages)
+                }
+            })
+        }
+    }
+    
     static func uploadMessage(_ message: String, to user: User, completion: ((Error?) -> Void)?) {
         guard let currentUID = Auth.auth().currentUser?.uid else { return }
         

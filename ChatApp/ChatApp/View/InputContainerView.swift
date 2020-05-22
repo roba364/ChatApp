@@ -38,7 +38,12 @@ class InputContainerView: UIView {
         let dividerView = UIView()
         dividerView.backgroundColor = .white
         addSubview(dividerView)
-        dividerView.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 8, paddingRight: 8, height: 0.75)
+        dividerView.anchor(left: leftAnchor,
+                           bottom: bottomAnchor,
+                           right: rightAnchor,
+                           paddingLeft: 8,
+                           paddingRight: 8,
+                           height: 0.75)
     }
     
     required init?(coder: NSCoder) {

@@ -41,6 +41,7 @@ class ChatController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchMessages()
     }
     
     override var inputAccessoryView: UIView? {
@@ -49,6 +50,15 @@ class ChatController: UICollectionViewController {
     
     override var canBecomeFirstResponder: Bool {
         return true
+    }
+    
+    //MARK: - API
+    
+    private func fetchMessages() {
+        Service.fetchMessages(forUser: user) { (messages) in
+            self.messages = messages
+            self.collectionView.reloadData()
+        }
     }
     
     //MARK: - Helpers
@@ -74,6 +84,9 @@ extension ChatController {
         let message = messages[indexPath.row]
         
         cell.message = message
+        
+        // grab user to start message
+        cell.message?.user = user
         
         return cell
     }
@@ -102,7 +115,7 @@ extension ChatController: CustomInputAccessoryViewDelegate {
                 return
             }
             
-            inputView.messageInputTextView.text = nil
+            inputView.clearMessageText()
         }
     }
 }
