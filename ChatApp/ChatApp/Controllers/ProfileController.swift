@@ -54,9 +54,11 @@ class ProfileController: UITableViewController {
         
         headerView.delegate = self
         tableView.tableHeaderView = headerView
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(ProfileCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableFooterView = UIView()
         tableView.contentInsetAdjustmentBehavior = .never
+        tableView.rowHeight = 64
+        tableView.backgroundColor = .systemGroupedBackground
     }
 }
 
@@ -64,16 +66,29 @@ class ProfileController: UITableViewController {
 
 extension ProfileController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return ProfileViewModel.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ProfileCell else { fatalError("Failed to setup ProfileCell") }
+        
+        let viewModel = ProfileViewModel(rawValue: indexPath.row)
+        
+        cell.viewModel = viewModel
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }
 }
+
+extension ProfileController {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // add some padding on top
+        return UIView()
+    }
+}
+
 
     //MARK: - ProfileHeaderViewDelegate
 

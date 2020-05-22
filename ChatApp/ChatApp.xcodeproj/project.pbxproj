@@ -37,6 +37,8 @@
 		A4FD36E52477EC3200DC32B8 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36E42477EC3200DC32B8 /* ConversationViewModel.swift */; };
 		A4FD36E72477F12100DC32B8 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36E62477F12100DC32B8 /* ProfileController.swift */; };
 		A4FD36E92477F24800DC32B8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36E82477F24800DC32B8 /* ProfileHeaderView.swift */; };
+		A4FD36EB24781F8500DC32B8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36EA24781F8500DC32B8 /* ProfileViewModel.swift */; };
+		A4FD36ED247821CD00DC32B8 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD36EC247821CD00DC32B8 /* ProfileCell.swift */; };
 		EEAA0CB97DDC401DDCB70A46 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		A4FD36E42477EC3200DC32B8 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		A4FD36E62477F12100DC32B8 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		A4FD36E82477F24800DC32B8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		A4FD36EA24781F8500DC32B8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A4FD36EC247821CD00DC32B8 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		F7F5A0AFC879019CBB773827 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -174,6 +178,7 @@
 				A4FD36C9247583D100DC32B8 /* Authentication */,
 				A4FD36DE2476CDAD00DC32B8 /* MessageViewModel.swift */,
 				A4FD36E42477EC3200DC32B8 /* ConversationViewModel.swift */,
+				A4FD36EA24781F8500DC32B8 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				A4FD36D82476B64600DC32B8 /* CustomInputAccessoryView.swift */,
 				A4FD36E22477E84600DC32B8 /* ConversationCell.swift */,
 				A4FD36DA2476C11800DC32B8 /* MessageCell.swift */,
+				A4FD36EC247821CD00DC32B8 /* ProfileCell.swift */,
 				A4FD36E82477F24800DC32B8 /* ProfileHeaderView.swift */,
 			);
 			path = View;
@@ -346,6 +352,7 @@
 				A4FD36E72477F12100DC32B8 /* ProfileController.swift in Sources */,
 				A4FD36A324752B3C00DC32B8 /* ViewController.swift in Sources */,
 				A4FD36E12477C2CE00DC32B8 /* Constants.swift in Sources */,
+				A4FD36EB24781F8500DC32B8 /* ProfileViewModel.swift in Sources */,
 				A4FD36C2247550B100DC32B8 /* InputContainerView.swift in Sources */,
 				A4FD369F24752B3C00DC32B8 /* AppDelegate.swift in Sources */,
 				A4FD36CD247673CA00DC32B8 /* AuthService.swift in Sources */,
@@ -355,6 +362,7 @@
 				A4FD36D1247698B300DC32B8 /* UserCell.swift in Sources */,
 				A4FD36B924752C5100DC32B8 /* ConversationsController.swift in Sources */,
 				A4FD36D324769D4900DC32B8 /* User.swift in Sources */,
+				A4FD36ED247821CD00DC32B8 /* ProfileCell.swift in Sources */,
 				A4FD36D524769DCD00DC32B8 /* Service.swift in Sources */,
 				A4FD36DB2476C11800DC32B8 /* MessageCell.swift in Sources */,
 				A4FD36E52477EC3200DC32B8 /* ConversationViewModel.swift in Sources */,
