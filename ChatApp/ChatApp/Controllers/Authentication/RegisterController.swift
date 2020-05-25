@@ -127,8 +127,8 @@ class RegisterController: UIViewController {
             
         AuthService.shared.createUser(credentials: credentials) { (error) in
             if let error = error {
-                print("DEBUG: Failed to create user with error", error.localizedDescription)
                 self.showLoader(false)
+                self.showError(error.localizedDescription)
             }
             
             self.showLoader(false)

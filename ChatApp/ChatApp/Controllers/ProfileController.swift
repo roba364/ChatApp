@@ -51,8 +51,14 @@ class ProfileController: UITableViewController {
     //MARK: - API
     
     private func fetchUser() {
+        showLoader(true)
+        
         guard let currentUID = Auth.auth().currentUser?.uid else { return }
-        Service.fetchUser(withUID: currentUID) { (user) in
+        
+        Service.fetchUser(withUID: currentUID) { [weak self] (user) in
+            guard let self = self else { return }
+            
+            self.showLoader(false)
             self.user = user
         }
     }
@@ -135,14 +141,14 @@ extension ProfileController: ProfileFooterViewDelegate {
     func handleLogout() {
         let alertController = UIAlertController(title: nil, message: "Are you sure you want to logout?", preferredStyle: .actionSheet)
         
-        let actionLogout = UIAlertAction(title: "Log out", style: .destructive) { (_) in
-            self.delegate?.handleLogout()
-        }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { (_) in
+            self.dismiss(animated: true) {
+                self.delegate?.handleLogout()
+            }
+        }))
         
-        alertController.addAction(actionLogout)
-        alertController.addAction(cancelAction)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         present(alertController, animated: true)
     }

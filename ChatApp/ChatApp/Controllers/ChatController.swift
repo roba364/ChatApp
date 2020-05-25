@@ -55,7 +55,13 @@ class ChatController: UICollectionViewController {
     //MARK: - API
     
     private func fetchMessages() {
-        Service.fetchMessages(forUser: user) { (messages) in
+        showLoader(true)
+        
+        Service.fetchMessages(forUser: user) { [weak self] (messages) in
+            guard let self = self else { return }
+            
+            self.showLoader(false)
+            
             self.messages = messages
             self.collectionView.reloadData()
             // scroll down at the bottom of collectionView every time when fetchMessages

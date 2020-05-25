@@ -100,10 +100,12 @@ class LoginController: UIViewController {
         
        showLoader(true, withText: "Loggin in")
         
-        AuthService.shared.logUserIn(withEmail: email, password: password) { (result, error) in
+        AuthService.shared.logUserIn(withEmail: email, password: password) { [weak self] (result, error) in
+            guard let self = self else { return }
+            
             if let error = error {
-                print("DEBUG: Failed to log in with error", error.localizedDescription)
                 self.showLoader(false)
+                self.showError(error.localizedDescription)
                 return
             }
             
