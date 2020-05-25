@@ -145,6 +145,5 @@ extension ProfileController: ProfileFooterViewDelegate {
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true)
-        
     }
 }

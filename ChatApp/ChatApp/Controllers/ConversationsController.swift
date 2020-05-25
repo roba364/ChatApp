@@ -17,6 +17,7 @@ class ConversationsController: UIViewController {
     
     private let tableView = UITableView()
     private var conversations = [Conversation]()
+    private var conversationsDictionary = [String: Conversation]()
     
     private let newMessageButton: UIButton = {
         let button = UIButton(type: .system)
@@ -67,7 +68,14 @@ class ConversationsController: UIViewController {
     
     private func fetchConversations() {
         Service.fetchConversations { (conversations) in
-            self.conversations = conversations
+            
+            conversations.forEach({ conversation in
+                // set the key
+                let message = conversation.message
+                self.conversationsDictionary[message.chatPartnerId] = conversation
+            })
+            
+            self.conversations = Array(self.conversationsDictionary.values)
             self.tableView.reloadData()
         }
     }
@@ -76,8 +84,6 @@ class ConversationsController: UIViewController {
         if Auth.auth().currentUser?.uid == nil {
             presentLoginScreen()
             print("DEBUG: User is not logged in")
-        } else {
-            print("DEBUG: User logged in. User is : \(Auth.auth().currentUser?.uid)")
         }
     }
     
@@ -95,6 +101,7 @@ class ConversationsController: UIViewController {
     private func presentLoginScreen() {
         DispatchQueue.main.async {
             let controller = LoginController()
+            controller.delegate = self
             let navVC = UINavigationController(rootViewController: controller)
             navVC.modalPresentationStyle = .fullScreen
             self.present(navVC, animated: true)
@@ -186,12 +193,22 @@ extension ConversationsController: NewMessageControllerDelegate {
     }
 }
 
+    //MARK: - ProfileControllerDelegate
+
 extension ConversationsController: ProfileControllerDelegate {
     // use delegate chaining
     // end of chaining
     func handleLogout() {
         logout()
     }
+}
+
+    //MARK: - AuthenticationDelegate
     
-    
+extension ConversationsController: AuthenticationDelegate {
+    func authenticationComplete() {
+        dismiss(animated: true)
+        configureUI()
+        fetchConversations()
+    }
 }

@@ -16,6 +16,8 @@ class RegisterController: UIViewController {
     private var viewModel = RegisterViewModel()
     private var profileImage: UIImage?
     
+    weak var delegate: AuthenticationDelegate?
+    
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         let image = UIImage(named: "plus_photo")
@@ -112,8 +114,7 @@ class RegisterController: UIViewController {
             let fullname = fullNameTextField.text,
             let username = userNameTextField.text?.lowercased(),
             let password = passwordTextField.text,
-            let profileImage = profileImage,
-            let imageData = profileImage.jpegData(compressionQuality: 0.3)
+            let profileImage = profileImage
             else { return }
         
         let credentials = RegistrationCredentials(email: email,
@@ -131,7 +132,7 @@ class RegisterController: UIViewController {
             }
             
             self.showLoader(false)
-            self.dismiss(animated: true)
+            self.delegate?.authenticationComplete()
         }
     }
     
@@ -235,6 +236,8 @@ extension RegisterController: UIImagePickerControllerDelegate, UINavigationContr
     }
 }
 
+    //MARK: - AuthenticationControllerProtocol
+
 extension RegisterController: AuthenticationControllerProtocol {
 
         func checkFormStatus() {
@@ -247,3 +250,6 @@ extension RegisterController: AuthenticationControllerProtocol {
             }
         }
 }
+
+//MARK: - AuthenticationControllerProtocol
+
