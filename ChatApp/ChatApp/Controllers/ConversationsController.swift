@@ -158,7 +158,7 @@ extension ConversationsController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = conversations[indexPath.row].user
         showChatController(forUser: user)
-        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

@@ -112,6 +112,7 @@ extension NewMessageController {
         let user = isSearchMode ? filteredUsers[indexPath.row] : users[indexPath.row]
         
         delegate?.controller(self, wantsToStartChatWith: user)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
